@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="David Bukovšek">
+    <meta name="description" content="Pretvornik">
+    <meta name="keywords" content="pretvornik, pretvornik enot">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Pretvornik</title>
+    <script type="text/javascript">
+         function reply_click(clicked_id) {
+            if (clicked_id < 12) {
+                document.getElementById("dropBtn").value = document.getElementById(clicked_id).innerHTML;
+                // document.getElementById("dropBtn").innerHTML = document.getElementById(clicked_id).innerHTML;
+                document.getElementsByName("from_unit")[0].value = document.getElementById(clicked_id).innerHTML;
+                // set hidden input value id to clicked id
+            } else {
+                document.getElementById("dropBtn2").value = document.getElementById(clicked_id).innerHTML;
+                // document.getElementById("dropBtn2").innerHTML = document.getElementById(clicked_id).innerHTML;
+                document.getElementsByName("to_unit")[0].value = document.getElementById(clicked_id).innerHTML;
+            }
+         }
+    </script>
+</head>
+<body>
+    <div>
+        <form method="post" action="/">
+            <input type="text" name="from" class="enter" value="{% if result3 %}{{result3}}{% else %}{% endif %}">
+            <input type="hidden" name="from_unit" value="{% if result %}{{result}}{% else %}{% endif %}">
+            <div class="dropdown">
+                <input type="text" value="{% if result %}{{result}}{% else %}Enota{% endif %}" class="dropbtn" id="dropBtn" readonly>
+                <div class="dropdown-content">
+                    <a href="#" id="1" onClick="reply_click(this.id)">Mikrometer</a>
+                    <a href="#" id="2" onClick="reply_click(this.id)">Milimeter</a>
+                    <a href="#" id="3" onClick="reply_click(this.id)">Centimeter</a>
+                    <a href="#" id="4" onClick="reply_click(this.id)">Decimeter</a>
+                    <a href="#" id="5" onClick="reply_click(this.id)">Meter</a>
+                    <a href="#" id="6" onClick="reply_click(this.id)">Kilometer</a>
+                    <a href="#" id="7" onClick="reply_click(this.id)">Palec</a>
+                    <a href="#" id="8" onClick="reply_click(this.id)">Cevelj</a>
+                    <a href="#" id="9" onClick="reply_click(this.id)">Jard</a>
+                    <a href="#" id="10" onClick="reply_click(this.id)">Milja</a>
+                    <a href="#" id="11" onClick="reply_click(this.id)">Navticna milja</a>
+                </div>
+            </div>
+            <input type="text" name="to" class="enter" value="{% if result4 %}{{result4}}{% else %}{% endif %}" readonly>
+            <input type="hidden" name="to_unit" value="{% if result2 %}{{result2}}{% else %}{% endif %}">
+            <div class="dropdown">
+                <input type="text" value="{% if result2 %}{{result2}}{% else %}Enota{% endif %}" class="dropbtn" id="dropBtn2" readonly>
+                <div class="dropdown-content">
+                    <a href="#" id="12" onClick="reply_click(this.id)">Mikrometer</a>
+                    <a href="#" id="13" onClick="reply_click(this.id)">Milimeter</a>
+                    <a href="#" id="14" onClick="reply_click(this.id)">Centimeter</a>
+                    <a href="#" id="15" onClick="reply_click(this.id)">Decimeter</a>
+                    <a href="#" id="16" onClick="reply_click(this.id)">Meter</a>
+                    <a href="#" id="17" onClick="reply_click(this.id)">Kilometer</a>
+                    <a href="#" id="18" onClick="reply_click(this.id)">Palec</a>
+                    <a href="#" id="19" onClick="reply_click(this.id)">Cevelj</a>
+                    <a href="#" id="20" onClick="reply_click(this.id)">Jard</a>
+                    <a href="#" id="21" onClick="reply_click(this.id)">Milja</a>
+                    <a href="#" id="22" onClick="reply_click(this.id)">Navticna milja</a>
+                </div>
+            </div><br>
+            <input type="submit" value="Izračunaj" class="btnSubmit">
+        </form>
+    </div>
+</body>
+</html>
